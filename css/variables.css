@@ -19,18 +19,7 @@
   --color-sidebar-border:    rgba(255, 255, 255, 0.15);
   --color-sidebar-link:      rgba(255, 255, 255, 0.80);
 
-  /* Tipografie */
-  --font-family:             'Raleway', 'Segoe UI', system-ui, sans-serif;
-  --font-xs:                 12px;
-  --font-sm:                 13px;
-  --font-base:               14.5px;
-  --font-md:                 16px;
-  --font-lg:                 20px;
-  --font-xl:                 26px;
-
-  --tracking-normal:         0.5px;
-  --tracking-wide:           2px;
-  --tracking-heading:        5px;
+  /* Tipografie → mutata in css/fonts.css */
 
   /* Spatiere */
   --sp-1:  4px;
@@ -43,13 +32,13 @@
   --sp-10: 40px;
 
   /* Layout */
-  --sidebar-width:      272px;
-  --cv-max-width:       960px;
-  --photo-size:         128px;
-  --photo-size-mobile:  76px;
+  --photo-size:        128px;
+  --photo-size-mobile: 76px;
+
+  /* Timeline */
+  --color-timeline-line: rgba(28, 61, 82, 1);  /* linie subtila intre bulini */
 
   /* Misc */
   --radius-circle: 50%;
   --radius-sm:     4px;
-  --shadow-cv:     0 6px 40px rgba(0, 0, 0, 0.18);
 }

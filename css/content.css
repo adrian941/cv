@@ -40,6 +40,29 @@
   line-height: 1.65;
 }
 
+/* ------ Timeline track — container pentru itemi cu linie verticala ------ */
+/*
+  Linia e pe CONTAINER, nu pe itemi individuali.
+  Avantaj: linie continua, fara gap-uri, trece prin spatele tuturor bulinelor.
+  Bulinele (::before pe fiecare item) au z-index: 1 si apar deasupra liniei.
+*/
+.timeline-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.timeline-track::before {
+  content: '';
+  position: absolute;
+  left: 5px;    /* centrul bulinei de 11px: (11px - 1px linie) / 2 = 5px */
+  top: 5px;     /* aliniat cu top-ul primei buline */
+  bottom: 0;    /* coboara pana la finalul ultimului item */
+  width: 1px;
+  background-color: var(--color-timeline-line);
+  z-index: 0;
+}
+
 /* ------ Timeline item (Work Experience) ------ */
 /*
   Pattern de adaugat un nou loc de munca:
@@ -55,7 +78,7 @@
   margin-bottom: 0;
 }
 
-/* Bulinuta colorata */
+/* Bulinuta colorata — z-index: 1 ca sa apara peste linia containerului */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -65,7 +88,7 @@
   height: 11px;
   border-radius: var(--radius-circle);
   background-color: var(--color-sidebar-bg);
-  flex-shrink: 0;
+  z-index: 1;
 }
 
 .timeline-item__header {
@@ -138,7 +161,8 @@
 /* Sub-lista (proiecte interne) */
 .sub-list {
   margin-top: var(--sp-3);
-  padding-left: var(--sp-3);
+  padding-left: var(--sp-4);
+  border-left: 1px solid var(--color-timeline-line);
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
@@ -217,6 +241,7 @@
   height: 11px;
   border-radius: var(--radius-circle);
   background-color: var(--color-sidebar-bg);
+  z-index: 1;
 }
 
 .project-item__name {

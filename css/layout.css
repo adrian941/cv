@@ -1,62 +1,61 @@
 /* ============================================================
-   LAYOUT — wrapper, grid CV (sidebar + main)
-   Mobile-first: coloana unica, pe desktop: 2 coloane
+   LAYOUT — full-screen, sidebar + main, mobile-first
    ============================================================ */
 
-/* Wrapper principal */
+/* Wrapper principal — foloseste tot ecranul, fara cap de A4 */
 .cv-wrapper {
   display: flex;
-  flex-direction: column;        /* mobile: stivuit */
-  max-width: var(--cv-max-width);
+  flex-direction: column;  /* mobile: stivuit */
+  width: 100%;
   min-height: 100vh;
-  margin: 0 auto;
   background-color: var(--color-white);
-  box-shadow: var(--shadow-cv);
 }
 
-/* --- Desktop: grid 2 coloane --- */
+/* --- Desktop: 2 coloane, full-width --- */
 @media (min-width: 768px) {
   .cv-wrapper {
     flex-direction: row;
-    /* Sidebar ocupa o latime fixa; main-panel se extinde */
   }
 }
 
-/* Sidebar (coloana stanga) */
+/* ---- Sidebar (coloana stanga) ---- */
 .sidebar {
   background-color: var(--color-sidebar-bg);
   color: var(--color-sidebar-text);
   display: flex;
   flex-direction: column;
   padding: var(--sp-8) var(--sp-5);
-  gap: 0;
-
-  /* Pe mobile apare complet deasupra contentului */
   order: 1;
 }
 
 @media (min-width: 768px) {
   .sidebar {
-    width: var(--sidebar-width);
-    min-width: var(--sidebar-width);
-    /* Pe desktop sidebar-ul se intinde pe toata inaltime */
-    min-height: 100%;
+    /* Sidebar creste proportional cu ecranul, cu limite min/max */
+    width: clamp(270px, 28%, 380px);
+    min-width: clamp(270px, 28%, 380px);
+    min-height: 100vh;
+    /* Padding intern mai generos pe ecrane mari */
+    padding: clamp(var(--sp-6), 4vw, var(--sp-10))
+             clamp(var(--sp-4), 2.5vw, var(--sp-8));
     order: unset;
   }
 }
 
-/* Main content (coloana dreapta) */
+/* ---- Main content (coloana dreapta) ---- */
 .main-content {
   flex: 1;
-  padding: var(--sp-8) var(--sp-6);
   display: flex;
   flex-direction: column;
   gap: var(--sp-8);
+  /* Padding care creste pe ecrane late */
+  padding: var(--sp-6) var(--sp-5);
   order: 2;
 }
 
 @media (min-width: 768px) {
   .main-content {
-    padding: var(--sp-10) var(--sp-8);
+    padding: clamp(var(--sp-6), 4vw, var(--sp-10))
+             clamp(var(--sp-5), 4vw, 72px);
+    gap: clamp(var(--sp-8), 5vw, 64px);
   }
 }
