@@ -1,0 +1,215 @@
+/* ============================================================
+   SIDEBAR — profile, contact, tech, education, language
+   ============================================================ */
+
+/* ------ Sectiune generica sidebar ------ */
+.sidebar-section {
+  padding-top: var(--sp-5);
+  padding-bottom: var(--sp-5);
+  border-bottom: 1px solid var(--color-sidebar-border);
+}
+
+.sidebar-section:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.sidebar-section__title {
+  font-size: var(--font-xs);
+  font-weight: 800;
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: var(--sp-4);
+}
+
+/* ------ Profile ------ */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--color-sidebar-border);
+  margin-bottom: 0;
+}
+
+/* Pe mobile: foto + text pe orizontala */
+@media (max-width: 767px) {
+  .profile {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--sp-4);
+    align-items: center;
+  }
+}
+
+.profile__photo-wrap {
+  position: relative;
+  width: var(--photo-size);
+  height: var(--photo-size);
+  border-radius: var(--radius-circle);
+  border: 3px solid var(--color-accent);
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-bottom: var(--sp-4);
+  background-color: rgba(255, 255, 255, 0.08);
+  /* Centreaza continutul (fie img, fie initiale) */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .profile__photo-wrap {
+    width: var(--photo-size-mobile);
+    height: var(--photo-size-mobile);
+    margin-bottom: 0;
+  }
+}
+
+.profile__photo-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder initiale daca nu exista poza */
+.profile__initials {
+  display: none; /* arata doar cand img-ul pica (via JS onerror) */
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  inset: 0;
+  font-size: var(--font-xl);
+  font-weight: 800;
+  color: var(--color-white);
+  letter-spacing: 2px;
+}
+
+.profile__name {
+  font-size: var(--font-md);
+  font-weight: 800;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-white);
+  text-transform: uppercase;
+  margin-bottom: var(--sp-1);
+}
+
+.profile__title {
+  font-size: var(--font-xs);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-sidebar-muted);
+  text-transform: uppercase;
+}
+
+/* ------ Contact list ------ */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.contact-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  font-size: var(--font-sm);
+  color: var(--color-sidebar-text);
+}
+
+.contact-list__icon {
+  color: var(--color-accent);
+  width: 13px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+.contact-list__item a {
+  color: var(--color-sidebar-link);
+  word-break: break-all;
+}
+
+.contact-list__item a:hover {
+  color: var(--color-accent);
+}
+
+/* ------ Technologies list ------ */
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.tech-list__item {
+  position: relative;
+  padding-left: var(--sp-4);
+  font-size: var(--font-sm);
+  color: var(--color-sidebar-text);
+  line-height: 1.5;
+}
+
+.tech-list__item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-accent);
+}
+
+/* ------ Education list ------ */
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.education-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.education-list__years {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: 1px;
+}
+
+.education-list__degree {
+  font-size: var(--font-sm);
+  font-weight: 700;
+  color: var(--color-sidebar-text);
+}
+
+.education-list__school {
+  font-size: var(--font-xs);
+  color: var(--color-sidebar-muted);
+  line-height: 1.4;
+}
+
+/* ------ Language / English level ------ */
+.language-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.language-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.language-list__label {
+  font-size: var(--font-sm);
+  color: var(--color-sidebar-text);
+}

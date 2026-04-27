@@ -1,0 +1,249 @@
+/* ============================================================
+   MAIN CONTENT — sectiuni, timeline (work exp), proiecte
+   ============================================================ */
+
+/* ------ Sectiune generica content ------ */
+.content-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.content-section__heading {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  letter-spacing: var(--tracking-heading);
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  padding-bottom: var(--sp-2);
+  border-bottom: 3px solid var(--color-text-dark);
+  margin-bottom: var(--sp-6);
+}
+
+@media (max-width: 767px) {
+  .content-section__heading {
+    font-size: var(--font-lg);
+    letter-spacing: 3px;
+  }
+}
+
+.content-section__intro {
+  font-size: var(--font-base);
+  color: var(--color-text-body);
+  margin-bottom: var(--sp-4);
+  line-height: 1.65;
+}
+
+.content-section__footer {
+  margin-top: var(--sp-4);
+  font-size: var(--font-base);
+  color: var(--color-text-body);
+  line-height: 1.65;
+}
+
+/* ------ Timeline item (Work Experience) ------ */
+/*
+  Pattern de adaugat un nou loc de munca:
+  Copiaza tot blocul <article class="timeline-item"> si schimba textul.
+*/
+.timeline-item {
+  position: relative;
+  padding-left: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Bulinuta colorata */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-sidebar-bg);
+  flex-shrink: 0;
+}
+
+.timeline-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.timeline-item__company {
+  font-size: var(--font-base);
+  font-weight: 800;
+  color: var(--color-sidebar-bg);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.timeline-item__role {
+  font-size: var(--font-base);
+  font-weight: 700;
+  color: var(--color-sidebar-bg);
+  margin-top: 2px;
+}
+
+.timeline-item__date {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  padding-top: 2px;
+}
+
+@media (max-width: 500px) {
+  .timeline-item__date {
+    white-space: normal;
+  }
+}
+
+.timeline-item__body {
+  font-size: var(--font-base);
+  color: var(--color-text-body);
+  line-height: 1.65;
+}
+
+/* Lista principala de responsabilitati */
+.role-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.role-list__item {
+  position: relative;
+  padding-left: var(--sp-4);
+}
+
+.role-list__item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-text-dark);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+/* Sub-lista (proiecte interne) */
+.sub-list {
+  margin-top: var(--sp-3);
+  padding-left: var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.sub-list__item {
+  position: relative;
+  padding-left: var(--sp-4);
+}
+
+.sub-list__item::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  color: var(--color-accent);
+  font-size: 7px;
+}
+
+/* Lista cu sageti (sub-sub) */
+.arrow-list {
+  margin-top: var(--sp-2);
+  padding-left: var(--sp-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+}
+
+.arrow-list__item {
+  position: relative;
+  padding-left: 28px;
+  font-size: var(--font-sm);
+  color: var(--color-text-body);
+  line-height: 1.55;
+}
+
+.arrow-list__item::before {
+  content: '->';
+  position: absolute;
+  left: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-xs);
+  font-weight: 600;
+  top: 1px;
+}
+
+/* "Technologies used:" inline block */
+.tech-used {
+  margin-top: var(--sp-2);
+  font-size: var(--font-sm);
+  color: var(--color-text-body);
+  line-height: 1.55;
+}
+
+/* ------ Project item (Personal Projects) ------ */
+/*
+  Pattern de adaugat un nou proiect:
+  Copiaza tot blocul <article class="project-item"> si schimba textul.
+*/
+.project-item {
+  position: relative;
+  padding-left: var(--sp-6);
+  margin-bottom: var(--sp-6);
+}
+
+.project-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.project-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--radius-circle);
+  background-color: var(--color-sidebar-bg);
+}
+
+.project-item__name {
+  font-size: var(--font-md);
+  font-weight: 800;
+  color: var(--color-sidebar-bg);
+  margin-bottom: var(--sp-2);
+}
+
+.project-item__subtitle {
+  color: var(--color-text-dark);
+  font-weight: 600;
+}
+
+.project-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  font-size: var(--font-base);
+  color: var(--color-text-body);
+  line-height: 1.65;
+}
+
+.project-item__repo a {
+  color: var(--color-accent);
+}
+
+.project-item__repo a:hover {
+  text-decoration: underline;
+}

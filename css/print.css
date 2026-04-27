@@ -1,0 +1,31 @@
+/* ============================================================
+   PRINT — stiluri pentru export PDF / tiparire
+   ============================================================ */
+@media print {
+  body {
+    background: none;
+    font-size: 11px;
+  }
+
+  .cv-wrapper {
+    box-shadow: none;
+    max-width: 100%;
+    min-height: auto;
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .main-content {
+    padding: var(--sp-6);
+  }
+
+  a {
+    color: inherit;
+  }
+}

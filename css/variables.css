@@ -1,0 +1,55 @@
+/* ============================================================
+   DESIGN TOKENS — schimba aici, se aplica peste tot
+   ============================================================ */
+:root {
+  /* Culori principale — ajustate sa coincida cu CV-ul original */
+  --color-sidebar-bg:        #1C3D52;   /* navy-blue din original */
+  --color-accent:            #27a3d7;   /* coral din original */
+  --color-white:             #FFFFFF;
+  --color-page-bg:           #D6DDE3;
+
+  /* Text */
+  --color-text-dark:         #1F1F1F;
+  --color-text-body:         #2E2E2E;
+  --color-text-muted:        #666666;
+
+  /* Sidebar text */
+  --color-sidebar-text:      rgba(255, 255, 255, 0.92);
+  --color-sidebar-muted:     rgba(255, 255, 255, 0.58);
+  --color-sidebar-border:    rgba(255, 255, 255, 0.15);
+  --color-sidebar-link:      rgba(255, 255, 255, 0.80);
+
+  /* Tipografie */
+  --font-family:             'Raleway', 'Segoe UI', system-ui, sans-serif;
+  --font-xs:                 12px;
+  --font-sm:                 13px;
+  --font-base:               14.5px;
+  --font-md:                 16px;
+  --font-lg:                 20px;
+  --font-xl:                 26px;
+
+  --tracking-normal:         0.5px;
+  --tracking-wide:           2px;
+  --tracking-heading:        5px;
+
+  /* Spatiere */
+  --sp-1:  4px;
+  --sp-2:  8px;
+  --sp-3:  12px;
+  --sp-4:  16px;
+  --sp-5:  20px;
+  --sp-6:  24px;
+  --sp-8:  32px;
+  --sp-10: 40px;
+
+  /* Layout */
+  --sidebar-width:      272px;
+  --cv-max-width:       960px;
+  --photo-size:         128px;
+  --photo-size-mobile:  76px;
+
+  /* Misc */
+  --radius-circle: 50%;
+  --radius-sm:     4px;
+  --shadow-cv:     0 6px 40px rgba(0, 0, 0, 0.18);
+}

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adrian Alexandrescu — .NET Developer</title>
+
+  <!-- Google Fonts: Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome (icons contact) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- CSS modules — ordinea conteaza -->
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/sidebar.css" />
+  <link rel="stylesheet" href="css/content.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/print.css" />
+</head>
+<body>
+
+<div class="cv-wrapper">
+
+  <!-- ==============================================================
+       SIDEBAR (coloana stanga)
+       ============================================================== -->
+  <aside class="sidebar" aria-label="Informatii personale">
+
+    <!-- ---- Profile ---- -->
+    <div class="profile">
+      <div class="profile__photo-wrap">
+        <!--
+          Adauga poza ta: pune un fisier "photo.jpg" in acelasi folder
+          cu index.html si inlocuieste src="" de mai jos.
+          Daca nu exista, se afiseaza initialele.
+        -->
+        <img
+          src="photo.jpg"
+          alt="Adrian Alexandrescu"
+          onerror="this.style.display='none'; document.getElementById('profile-initials').style.display='flex';"
+        />
+        <span id="profile-initials" class="profile__initials">AA</span>
+      </div>
+      <div>
+        <h1 class="profile__name">Adrian Alexandrescu</h1>
+        <p class="profile__title">.NET Developer</p>
+      </div>
+    </div>
+
+    <!-- ---- Contact ---- -->
+    <!--
+      Adaugare contact nou: copiaza un <li class="contact-list__item"> si schimba icon + text.
+    -->
+    <section class="sidebar-section" aria-labelledby="contact-heading">
+      <h2 class="sidebar-section__title" id="contact-heading">Contact</h2>
+      <ul class="contact-list">
+        <li class="contact-list__item">
+          <i class="fa-solid fa-phone contact-list__icon" aria-hidden="true"></i>
+          <span>+4 0731 372 328</span>
+        </li>
+        <li class="contact-list__item">
+          <i class="fa-solid fa-envelope contact-list__icon" aria-hidden="true"></i>
+          <a href="mailto:adrian.alexandrescu.94@gmail.com">adrian.alexandrescu.94@gmail.com</a>
+        </li>
+        <li class="contact-list__item">
+          <i class="fa-solid fa-globe contact-list__icon" aria-hidden="true"></i>
+          <a href="https://www.adrian-alexandrescu.dev" target="_blank" rel="noopener">www.adrian-alexandrescu.dev</a>
+        </li>
+        <li class="contact-list__item">
+          <i class="fa-brands fa-linkedin-in contact-list__icon" aria-hidden="true"></i>
+          <a href="https://www.linkedin.com/in/aalexand94" target="_blank" rel="noopener">linkedin.com/in/aalexand94</a>
+        </li>
+        <li class="contact-list__item">
+          <i class="fa-solid fa-location-dot contact-list__icon" aria-hidden="true"></i>
+          <span>București, România</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ---- Technologies ---- -->
+    <!--
+      Adaugare tehnologie noua: copiaza un <li class="tech-list__item"> si schimba textul.
+    -->
+    <section class="sidebar-section" aria-labelledby="tech-heading">
+      <h2 class="sidebar-section__title" id="tech-heading">Technologies</h2>
+      <ul class="tech-list">
+        <li class="tech-list__item">.NET Core, .NET Framework</li>
+        <li class="tech-list__item">HTML, CSS, Javascript, Blazor</li>
+        <li class="tech-list__item">Microsoft SQL Server</li>
+        <li class="tech-list__item">Entity Framework, LINQ</li>
+        <li class="tech-list__item">REST API</li>
+        <li class="tech-list__item">Git, GitHub, Azure Repos</li>
+        <li class="tech-list__item">Azure Services (App Service, Blob Storage, SQL Database)</li>
+        <li class="tech-list__item">Asynchronous, Parallel programming</li>
+      </ul>
+    </section>
+
+    <!-- ---- Education ---- -->
+    <!--
+      Adaugare educatie noua: copiaza un <li class="education-list__item"> si schimba textul.
+    -->
+    <section class="sidebar-section" aria-labelledby="edu-heading">
+      <h2 class="sidebar-section__title" id="edu-heading">Education</h2>
+      <ul class="education-list">
+        <li class="education-list__item">
+          <span class="education-list__years">2013 — 2016</span>
+          <strong class="education-list__degree">Dental Technology</strong>
+          <span class="education-list__school">UMF Carol Davila</span>
+        </li>
+        <li class="education-list__item">
+          <span class="education-list__years">2009 — 2013</span>
+          <strong class="education-list__degree">Mathematics and Informatics</strong>
+          <span class="education-list__school">Informatics Intensive</span>
+          <span class="education-list__school">Nicolae Bălcescu National College</span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ---- English Level ---- -->
+    <!--
+      Adaugare limba noua sau modificare nivel:
+      - Schimba label in <span class="language-list__label">
+      - Schimba --pct:XX% pe progress-bar__fill (0-100)
+    -->
+    <section class="sidebar-section" aria-labelledby="lang-heading">
+      <h2 class="sidebar-section__title" id="lang-heading">English Level</h2>
+      <ul class="language-list">
+        <li class="language-list__item">
+          <span class="language-list__label">Listen</span>
+          <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar__fill" style="--pct: 90%;"></div>
+          </div>
+        </li>
+        <li class="language-list__item">
+          <span class="language-list__label">Read</span>
+          <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar__fill" style="--pct: 85%;"></div>
+          </div>
+        </li>
+        <li class="language-list__item">
+          <span class="language-list__label">Talk</span>
+          <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar__fill" style="--pct: 70%;"></div>
+          </div>
+        </li>
+        <li class="language-list__item">
+          <span class="language-list__label">Write</span>
+          <div class="progress-bar" role="progressbar" aria-valuenow="72" aria-valuemin="0" aria-valuemax="100">
+            <div class="progress-bar__fill" style="--pct: 72%;"></div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+  </aside><!-- /sidebar -->
+
+
+  <!-- ==============================================================
+       MAIN CONTENT (coloana dreapta)
+       ============================================================== -->
+  <main class="main-content">
+
+    <!-- ==========================================================
+         WORK EXPERIENCE
+         ==========================================================
+         Adaugare loc de munca nou:
+           1. Copiaza tot blocul <article class="timeline-item">
+           2. Schimba company, role, date si continutul din body.
+           Nu mai trebuie modificat nimic altundeva.
+         ========================================================== -->
+    <section class="content-section" aria-labelledby="work-heading">
+      <h2 class="content-section__heading" id="work-heading">Work Experience</h2>
+
+      <!-- --- FINASTRA --- -->
+      <article class="timeline-item">
+        <div class="timeline-item__header">
+          <div>
+            <h3 class="timeline-item__company">Finastra</h3>
+            <h4 class="timeline-item__role">Technical CS and .NET Developer</h4>
+          </div>
+          <time class="timeline-item__date">2018 — Present</time>
+        </div>
+
+        <div class="timeline-item__body">
+          <ul class="role-list">
+
+            <li class="role-list__item">
+              <p>As a <strong>.NET Developer</strong>, I have worked on developing and maintaining some internal apps, such as:</p>
+              <ul class="sub-list">
+                <li class="sub-list__item">
+                  <p>A comprehensive <strong>Windows Forms</strong> application developed and maintained for our Technical Support team, which:</p>
+                  <ul class="arrow-list">
+                    <li class="arrow-list__item">Troubleshoots the team's ecosystem by logging and analyzing issues.</li>
+                    <li class="arrow-list__item">Automates the generation of complex ARCH environment setups, simplifying configuration processes.</li>
+                    <li class="arrow-list__item">Fetches and validates environment information from various sources (machines, files, databases), significantly reducing manual effort.</li>
+                    <li class="arrow-list__item">Acts as a quick 'Control Panel' for managing and monitoring technical envs.</li>
+                  </ul>
+                  <p class="tech-used"><strong>Technologies used:</strong> .NET Framework, Windows Forms, Dapper, LINQ.</p>
+                </li>
+                <li class="sub-list__item">
+                  <p>A <strong>Blazor WASM</strong> ASP.NET application built on .NET 6, used by our entire internal CS team to retrieve detailed environment information and support various tasks based on user roles and team needs.</p>
+                  <p class="tech-used"><strong>Technologies used:</strong> .NET Core, ASP.NET Core, Blazor WASM, Microsoft SQL Server, Entity Framework, Web APIs, HTML, CSS, Javascript, IIS, Microsoft Individual User Accounts.</p>
+                </li>
+              </ul>
+            </li>
+
+            <li class="role-list__item">
+              <p>As a <strong>Database Administrator</strong> with L1 support, I manage Oracle/MSSQL Servers, including creating, configuring, and maintaining databases and servers. I performed SQL query optimization and ensured data integrity through robust validation processes and backups, while efficiently allocating and managing database space to enhance performance and reliability.</p>
+            </li>
+
+            <li class="role-list__item">
+              <p>As an <strong>ARCH Environment Administrator</strong> with L3 support, I manage Windows/Unix Servers, I create and configure client environments, resolve Jira tickets, and troubleshoot technical issues. Additionally, I automate repetitive tasks using CMD, PowerShell and Bash scripting, enhancing efficiency and reducing manual effort in environment management.</p>
+            </li>
+
+          </ul>
+        </div>
+      </article>
+
+      <!-- --- Dental Technician --- -->
+      <article class="timeline-item">
+        <div class="timeline-item__header">
+          <div>
+            <h3 class="timeline-item__company">Dental Technician</h3>
+          </div>
+          <time class="timeline-item__date">2014 — 2018</time>
+        </div>
+        <div class="timeline-item__body">
+          <p>Crafting dental restorations. I worked as a dental technician before transitioning to IT.</p>
+        </div>
+      </article>
+
+    </section><!-- /work experience -->
+
+
+    <!-- ==========================================================
+         PERSONAL PROJECTS
+         ==========================================================
+         Adaugare proiect nou:
+           1. Copiaza tot blocul <article class="project-item">
+           2. Schimba numele, descrierea, link-ul si tehnologiile.
+           Nu mai trebuie modificat nimic altundeva.
+         ========================================================== -->
+    <section class="content-section" aria-labelledby="projects-heading">
+      <h2 class="content-section__heading" id="projects-heading">Personal Projects</h2>
+
+      <p class="content-section__intro">
+        I have independently developed two .NET Core apps, production-ready projects, used by Dental Clinics in Romania to meet their needs.
+      </p>
+
+      <!-- --- MEGAGEN --- -->
+      <article class="project-item">
+        <h3 class="project-item__name">
+          MEGAGEN <span class="project-item__subtitle">— Dental Implants</span>
+        </h3>
+        <div class="project-item__body">
+          <p>A Blazor WASM project, deployed on Azure, provides a user-friendly platform for uploading and viewing dental patient files and patient data. It includes Microsoft Authentication for secure login.</p>
+          <p>Additionally, I developed a 3D file viewer for enhanced visualization using the <strong>Three.js</strong> JavaScript library.</p>
+          <p class="project-item__repo">
+            <strong>GitHub Repo:</strong>
+            <a href="https://github.com/adrian941/DentalReports" target="_blank" rel="noopener">
+              github.com/adrian941/DentalReports
+            </a>
+          </p>
+          <p class="tech-used">
+            <strong>Technologies used:</strong> .NET Core, ASP.NET Core, Blazor WASM, Microsoft SQL Server, Entity Framework, RESTful API, HTML, CSS, Javascript, Azure Services (Azure App Service, Azure Blob Storage, Azure Microsoft Database)
+          </p>
+        </div>
+      </article>
+
+      <!-- --- DECADENT --- -->
+      <article class="project-item">
+        <h3 class="project-item__name">
+          DECADENT <span class="project-item__subtitle">— Orthodontics</span>
+        </h3>
+        <div class="project-item__body">
+          <p>A Blazor Server project designed to help dental technicians manage patient cases, oversee material purchases, and handle dental work based on custom recipes. It generates custom monthly reports on investments, earnings, and profits, and organizes laboratory workflow efficiently.</p>
+          <p class="tech-used">
+            <strong>Technologies used:</strong> ASP.NET Core, Blazor Server, Dapper, HTML, CSS, JS.
+          </p>
+        </div>
+      </article>
+
+      <p class="content-section__footer">
+        <strong>The code for all applications was written following best practices, with a focus on Design Patterns and SOLID principles.</strong>
+      </p>
+
+    </section><!-- /personal projects -->
+
+  </main><!-- /main-content -->
+
+</div><!-- /cv-wrapper -->
+
+</body>
+</html>

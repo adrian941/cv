@@ -1,0 +1,62 @@
+/* ============================================================
+   LAYOUT — wrapper, grid CV (sidebar + main)
+   Mobile-first: coloana unica, pe desktop: 2 coloane
+   ============================================================ */
+
+/* Wrapper principal */
+.cv-wrapper {
+  display: flex;
+  flex-direction: column;        /* mobile: stivuit */
+  max-width: var(--cv-max-width);
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-cv);
+}
+
+/* --- Desktop: grid 2 coloane --- */
+@media (min-width: 768px) {
+  .cv-wrapper {
+    flex-direction: row;
+    /* Sidebar ocupa o latime fixa; main-panel se extinde */
+  }
+}
+
+/* Sidebar (coloana stanga) */
+.sidebar {
+  background-color: var(--color-sidebar-bg);
+  color: var(--color-sidebar-text);
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-8) var(--sp-5);
+  gap: 0;
+
+  /* Pe mobile apare complet deasupra contentului */
+  order: 1;
+}
+
+@media (min-width: 768px) {
+  .sidebar {
+    width: var(--sidebar-width);
+    min-width: var(--sidebar-width);
+    /* Pe desktop sidebar-ul se intinde pe toata inaltime */
+    min-height: 100%;
+    order: unset;
+  }
+}
+
+/* Main content (coloana dreapta) */
+.main-content {
+  flex: 1;
+  padding: var(--sp-8) var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+  order: 2;
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    padding: var(--sp-10) var(--sp-8);
+  }
+}
