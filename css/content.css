@@ -161,11 +161,23 @@
 /* Sub-lista (proiecte interne) */
 .sub-list {
   margin-top: var(--sp-3);
-  padding-left: var(--sp-4);
-  border-left: 1px solid var(--color-timeline-line);
+  padding-left: var(--sp-4);   /* 16px indent fata de parinte */
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: var(--sp-4);
+}
+
+/* Linie prin centrul ◆ — acelasi principiu ca .timeline-track::before.
+   left = padding sub-lista (16px) + jumatatea aprox. a ◆ la 7px font (~3px) */
+.sub-list::before {
+  content: '';
+  position: absolute;
+  left: calc(var(--sp-4) + 3px);
+  top: 4px;
+  bottom: 0;
+  width: 0.1px;
+  background-color: var(--color-timeline-line);
 }
 
 .sub-list__item {
@@ -173,13 +185,14 @@
   padding-left: var(--sp-4);
 }
 
+/* ◆ vine dupa ::before in ordinea DOM => se deseneaza deasupra liniei */
 .sub-list__item::before {
-  content: '◆';
+  content: '•';
   position: absolute;
-  left: 0;
-  top: 4px;
-  color: var(--color-accent);
-  font-size: 7px;
+  left: -2.1px;
+  top: -16px;
+  color: var(--color-sidebar-bg);
+  font-size: 34px;
 }
 
 /* Lista cu sageti (sub-sub) */

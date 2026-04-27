@@ -12,9 +12,9 @@ html {
 }
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-body);      /* ← controlat din css/fonts.css */
   font-size: var(--font-base);
-  font-weight: 500;           /* Raleway 500 = mai gros si mai lizibil la dimensiuni mici */
+  font-weight: 500;
   color: var(--color-text-body);
   background-color: var(--color-page-bg);
   line-height: 1.65;
@@ -36,6 +36,7 @@ img {
 }
 
 h1, h2, h3, h4 {
+  font-family: var(--font-heading);   /* ← controlat din css/fonts.css */
   line-height: 1.2;
   font-weight: 700;
 }

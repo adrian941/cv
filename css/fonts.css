@@ -1,71 +1,47 @@
 /* ============================================================
-   FONTS — tipografie, marimi fluide, spatiere intre litere
+   FONTS — panoul de control pentru tot ce tine de font
    ============================================================
 
-   Font curent: Raleway (incarcat in index.html via Google Fonts)
-   Raleway este elegant pentru headinguri, dar are stroke-uri subtiri
-   care pot fi greu de citit la dimensiuni mici pe unele ecrane.
+   CUM SCHIMBI FONTUL IN 3 PASI:
+   ──────────────────────────────
+   1. Mergi la https://fonts.google.com , alege un font
+   2. Click "Get font" → "Embed code" → copiaza tag-ul <link>
+   3. In index.html, INLOCUIESTE linia 11 cu noul <link>
+   4. Schimba variabila de mai jos cu numele fontului ales
 
-   ── SUGESTII HEADING (nume, titluri sectiuni) ─────────────────
-   Curent     : 'Raleway'
-                Pro: elegant, letter-spacing frumos
-                Con: poate parea subtire la dimensiuni mici
+   ──────────────────────────────────────────────────────────
+   FONTURI RECOMANDATE (copiaza numele direct in variabila):
 
-   Alternativa: 'Outfit'
-                Pro: modern, geometric, potrivit pentru CV-uri tech
-                Link: ?family=Outfit:wght@600;700;800
+   Pentru TITLURI (--font-heading):
+     'Raleway'     — cel actual, elegant cu litere spatiate
+     'Outfit'      — modern, potrivit pentru CV de developer  ← incearca asta
+     'Montserrat'  — clasic, mai robust decat Raleway
+     'DM Sans'     — minimalist si curat
 
-   Alternativa: 'DM Sans'
-                Pro: curat, foarte lizibil, functioneaza si ca body
-                Link: ?family=DM+Sans:wght@400;500;600;700
+   Pentru TEXT (--font-body):
+     'Raleway'       — cel actual
+     'Inter'         — CEL MAI LIZIBIL pe ecran, recomandat  ← incearca asta
+     'Source Sans 3' — elegant, excelent la dimensiuni mici
+     'DM Sans'       — functioneaza bine si pentru body
+   ──────────────────────────────────────────────────────────
 
-   Alternativa: 'Montserrat'
-                Pro: clasic, similar cu Raleway dar mai robust
-                Link: ?family=Montserrat:wght@400;500;600;700;800
-
-   ── SUGESTII BODY TEXT (paragrafe, liste, descrieri) ──────────
-   Curent     : 'Raleway' weight 500 — acceptabil dar nu optim pentru text lung
-
-   ★ Recomandat: 'Inter'
-                Pro: standardul de facto pentru interfete/ecran,
-                     cel mai lizibil la dimensiuni mici, foarte clar
-                Link: ?family=Inter:wght@400;500;600
-
-   Alternativa: 'Source Sans 3'
-                Pro: creat de Adobe special pentru ecran, excelent
-                Link: ?family=Source+Sans+3:wght@400;500;600
-
-   Alternativa: 'Nunito'
-                Pro: rotunjit, prietenos, foarte lizibil
-                Link: ?family=Nunito:wght@400;500;600;700
-
-   ── CUM SCHIMBI FONTUL ────────────────────────────────────────
-   Exemplu: treci la Inter (body) + Outfit (heading):
-
-   1. In index.html, inlocuieste link-ul Google Fonts cu:
-      https://fonts.googleapis.com/css2?
-        family=Outfit:wght@600;700;800&
-        family=Inter:wght@400;500;600&
-        display=swap
-
-   2. Aici jos, schimba variabilele:
-      --font-family-heading: 'Outfit', sans-serif;
-      --font-family-body:    'Inter', system-ui, sans-serif;
-
-   3. In reset.css, aplica:
-      body { font-family: var(--font-family-body); }
-
-   4. In sidebar.css si content.css, pe headinguri:
-      font-family: var(--font-family-heading);
+   EXEMPLU: vreau Outfit la titluri si Inter la text:
+     1. In index.html linia 11, pune:
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+     2. Aici jos schimbi:
+        --font-heading: 'Outfit', system-ui, sans-serif;
+        --font-body:    'Inter',  system-ui, sans-serif;
    ============================================================ */
 
 :root {
-  /* Font principal — schimba aici pentru a afecta tot site-ul */
-  --font-family: 'Raleway', 'Segoe UI', system-ui, sans-serif;
 
-  /* Marimi fluide: clamp(minim, fluid-vw, maxim)
-     Pe ecrane late fontul creste proportional cu viewport-ul.
-     La browser zoom-out, viewport CSS creste => fonturile cresc => mai lizibil. */
+  /* ★ FONT TITLURI — afecteaza: nume sectiuni, companie, proiecte, numele tau */
+  --font-heading: 'Raleway', system-ui, sans-serif;
+
+  /* ★ FONT TEXT — afecteaza: paragrafe, liste, descrieri, tot restul */
+  --font-body:    'Raleway', system-ui, sans-serif;
+
+  /* MARIMI — cresc automat pe ecrane late (nu e nevoie sa le schimbi) */
   --font-xs:   clamp(11px, 0.8vw,  13px);
   --font-sm:   clamp(12px, 0.9vw,  14px);
   --font-base: clamp(13px, 1.05vw, 16px);
@@ -73,7 +49,7 @@
   --font-lg:   clamp(18px, 1.6vw,  24px);
   --font-xl:   clamp(22px, 2.2vw,  34px);
 
-  /* Letter-spacing */
+  /* SPATIERE INTRE LITERE — nu e nevoie sa schimbi */
   --tracking-normal:  0.5px;
   --tracking-wide:    2px;
   --tracking-heading: 5px;
