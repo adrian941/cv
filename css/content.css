@@ -189,8 +189,8 @@
 .sub-list__item::before {
   content: '•';
   position: absolute;
-  left: -2.1px;
-  top: -16px;
+  left: -3px;
+  top: -18px;
   color: var(--color-sidebar-bg);
   font-size: 34px;
 }
